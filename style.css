@@ -22,3 +22,17 @@ h1 {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+#main {
+  text-align: center;
+  margin: 50px 80px 0 80px; 
+}
+
+#main #container #quote {
+  font-size: 23px;
+  padding-bottom: 12px;
+}
+
+#main #container #author {
+  font-size: 18px;
+}
+
