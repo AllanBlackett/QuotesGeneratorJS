@@ -42,5 +42,15 @@ $(document).ready(function () {
     $('#main').fadeIn(1200);
   }
 
+   //.......................................................................
+
+  // display quotes from displayQuoteFromArray() function call 
+  function displayQuote(response) {
+    console.log(response.quote);
+    // Displaying results
+    $("#quote").text(response.quote);
+    $('#author').text(response.author);
+    $('#main').fadeIn(1200);
+  }
 
 }); // End document ready
