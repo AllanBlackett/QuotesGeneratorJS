@@ -2,7 +2,7 @@
 $(document).ready(function () {
 
   //********** Quotes Section  **********//
- 
+
   displayQuoteFromArray();
 
   // When #nextQuote button is clicked, generate new quote   
@@ -12,7 +12,6 @@ $(document).ready(function () {
     getRandomQuote();
   });
 
-  
   // Grabbing the quotes using Ajax call
   function getRandomQuote() {
     $.ajax({
@@ -42,8 +41,8 @@ $(document).ready(function () {
     $('#main').fadeIn(1200);
   }
 
-   //.......................................................................
-
+  //.......................................................................
+  
   // display quotes from displayQuoteFromArray() function call 
   function displayQuote(response) {
     console.log(response.quote);
@@ -51,6 +50,35 @@ $(document).ready(function () {
     $("#quote").text(response.quote);
     $('#author').text(response.author);
     $('#main').fadeIn(1200);
+  }
+
+  // create a function that will display quotes from this array if AJAX call fails    
+  function displayQuoteFromArray() {
+    let myQuotes = [{
+        author: "Malcom X",
+        quote: "No, I don't worry. I tell you, I am a man who believed that I died 20 years ago, and I live like a man who is dead already. I have no fear, whatsoever, of anybody or anything."
+      },
+      {
+        author: "Soren Aabye Kierkegaard",
+        quote: "People demand freedom of speech to make up for the freedom of thought which they avoid"
+      },
+      {
+        author: "Oscar Wilde",
+        quote: "The only way to get rid of a temptation is to yield to it."
+      },
+      {
+        author: "Aldous Huxley",
+        quote: "Maybe this world is another planet's Hell."
+      },
+      {
+        author: "Thomas Alba Edison",
+        quote: "I have not failed. I've just found 10,000 ways that won't work."
+      }
+    ];
+
+    // Using Math.floor to generate random Array Items from quotes   
+    let random = Math.floor(Math.random() * 5);
+    displayQuote(myQuotes[random]);
   }
 
 }); // End document ready
